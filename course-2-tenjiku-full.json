@@ -1,0 +1,17 @@
+{
+  "id": "course-2-tenjiku-full",
+  "name": "天竺（ゲーム用・架空コース）",
+  "type": "fantasy-route",
+  "description": "ゲーム用の架空コース「天竺」。日本国内の代表座標で構成したサンプル（距離は未計算）。必要なら実在座標やより長いルートに差し替えてください。",
+  "defaultStepLengthMeters": 0.72,
+  "stations": [
+    { "id": 0, "name": "日本橋（起点）", "lat": 35.682391, "lon": 139.774219, "distanceFromPrev": null, "cumulativeMeters": null, "approxSteps": null },
+    { "id": 1, "name": "京の門", "lat": 35.011636, "lon": 135.768028, "distanceFromPrev": null, "cumulativeMeters": null, "approxSteps": null },
+    { "id": 2, "name": "海の見える町", "lat": 34.690000, "lon": 135.195500, "distanceFromPrev": null, "cumulativeMeters": null, "approxSteps": null },
+    { "id": 3, "name": "山の聖地", "lat": 36.204824, "lon": 138.252924, "distanceFromPrev": null, "cumulativeMeters": null, "approxSteps": null },
+    { "id": 4, "name": "砂漠の境（幻）", "lat": 34.693738, "lon": 135.502165, "distanceFromPrev": null, "cumulativeMeters": null, "approxSteps": null },
+    { "id": 5, "name": "天竺王都（仮）", "lat": 35.689592, "lon": 139.700413, "distanceFromPrev": null, "cumulativeMeters": null, "approxSteps": null }
+  ],
+  "totalDistanceMeters": null,
+  "note": "天竺コースは架空の遊び用コースです。座標や駅名は必要に応じて変更してください。compute_distances.js で距離/累積/歩数を算出できます。"
+}
