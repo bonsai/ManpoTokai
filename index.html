@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>コースマップ — 山手線 / 東海道</title>
+  <title>東海道/山手線 すごろく — 歩数入力</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -11,56 +11,69 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app">
-    <header class="app-header">
-      <h1>コースマップ — 山手線 / 東海道</h1>
-      <p class="subtitle">コースを選んで地図とすごろく風ボードで俯瞰表示。手入力で歩数を反映します。</p>
-    </header>
+  <div class="container">
+    <!-- Pane 1: 入力 -->
+    <section class="pane pane-input card">
+      <div class="pane-header">
+        <h2>歩数入力</h2>
+      </div>
+      <div class="input-row">
+        <label>日付
+          <input id="dateInput" type="date" />
+        </label>
+        <label>歩数
+          <input id="stepsInput" type="number" min="0" inputmode="numeric" />
+        </label>
+        <label>出典
+          <select id="sourceSelect">
+            <option value="manual">手入力</option>
+            <option value="coca-cola">コカ・コーラアプリ</option>
+            <option value="other">その他</option>
+          </select>
+        </label>
+        <button id="addBtn" class="btn">追加</button>
+        <button id="pasteParseBtn" class="btn secondary">貼り付け解析</button>
+      </div>
 
-    <main class="layout">
-      <section class="left-panel card">
-        <div class="controls-row">
-          <label>コース:
-            <select id="courseSelect">
-              <option value="course-0-yamanote-shinjuku-shibuya.json">0 - 山手線（新宿→渋谷回り）</option>
-              <option value="course-1-tokaido-sample.json">1 - 東海道（サンプル）</option>
-            </select>
-          </label>
+      <div class="history-section">
+        <h3>履歴</h3>
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </section>
 
-          <label>手入力歩数（合計）:
-            <input id="stepsInput" type="number" min="0" value="13000" />
-          </label>
-
-          <label>歩幅 (m):
-            <input id="stepLength" type="number" min="0.4" step="0.01" value="0.72" />
-          </label>
-
-          <button id="loadBtn">読み込み</button>
+    <!-- Pane 2: すごろく -->
+    <section class="pane pane-board card">
+      <div class="pane-header">
+        <h2>すごろくボード</h2>
+        <div class="controls-inline">
+          <div class="date-display">選択日: <span id="displayDate">--</span></div>
+          <div class="course-toggle">
+            <button id="btnYamanote" class="btn toggle active" data-course="course-0-yamanote-shinjuku-shibuya.json">山手線</button>
+            <button id="btnTokaido" class="btn toggle" data-course="course-tokaido-53-full.json">東海道</button>
+          </div>
         </div>
+      </div>
 
-        <div id="map" class="map"></div>
+      <div class="board-area">
+        <svg id="boardSvg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
 
-        <div class="info" id="summary">コースを選んで「読み込み」を押してください。</div>
-      </section>
+      <div class="board-meta">
+        <div id="boardSummary" class="small muted">コースを選んで日付を入力してください。</div>
+      </div>
+    </section>
 
-      <section class="right-panel card">
-        <h2>すごろくボード（俯瞰）</h2>
-        <div id="boardWrapper" class="board-wrapper">
-          <svg id="boardSvg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMid meet"></svg>
+    <!-- Pane 3: 地図 -->
+    <section class="pane pane-map card">
+      <div class="pane-header">
+        <h2>地図（俯瞰）</h2>
+        <div class="map-legend">
+          <span class="dot node"></span> 駅/宿場
+          <span class="dot player"></span> あなたの位置
         </div>
-
-        <div class="legend">
-          <div><span class="dot node"></span> 宿場 / 駅</div>
-          <div><span class="dot player"></span> あなたの位置</div>
-        </div>
-
-        <div class="station-list card small" id="stationList"></div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <small>デモ用 — JSONファイルを同じディレクトリに置いてください。</small>
-    </footer>
+      </div>
+      <div id="map" class="map"></div>
+    </section>
   </div>
 
   <!-- Leaflet JS -->

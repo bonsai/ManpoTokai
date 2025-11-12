@@ -69,11 +69,6 @@ async function main(){
     }
   }
 
-  // If route is loop and you want to compute last->first, uncomment below to add final leg
-  // const last = course.stations[course.stations.length-1];
-  // const first = course.stations[0];
-  // last.distanceToFirst = Math.round(haversine(last.lat, last.lon, first.lat, first.lon));
-
   course.totalDistanceMeters = course.stations[course.stations.length-1].cumulativeMeters;
   course.totalApproxSteps = Math.round(course.totalDistanceMeters / stepLen);
 
