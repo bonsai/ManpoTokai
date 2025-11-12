@@ -1,0 +1,14 @@
+{
+  "id": "course-0-yamanote-shinjuku-shibuya",
+  "name": "山手線（新宿→渋谷回り）",
+  "type": "urban-rail",
+  "description": "短距離コース：新宿から渋谷へ（代々木・原宿経由）。",
+  "defaultStepLengthMeters": 0.72,
+  "stations": [
+    { "id": 0, "name": "新宿", "lat": 35.690922, "lon": 139.700257, "distanceFromPrev": 0, "cumulativeMeters": 0 },
+    { "id": 1, "name": "代々木", "lat": 35.683128, "lon": 139.701618, "distanceFromPrev": 900, "cumulativeMeters": 900 },
+    { "id": 2, "name": "原宿", "lat": 35.670354, "lon": 139.702041, "distanceFromPrev": 1500, "cumulativeMeters": 2400 },
+    { "id": 3, "name": "渋谷", "lat": 35.658034, "lon": 139.701636, "distanceFromPrev": 1400, "cumulativeMeters": 3800 }
+  ],
+  "totalDistanceMeters": 3800
+}

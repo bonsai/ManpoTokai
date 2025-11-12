@@ -1,0 +1,20 @@
+{
+  "id": "course-1-tokaido-sample",
+  "name": "東海道（サンプル）",
+  "type": "historical-route",
+  "description": "東海道の主要地点を抜粋したサンプルコース。",
+  "defaultStepLengthMeters": 0.72,
+  "stations": [
+    { "id": 0, "name": "日本橋", "lat": 35.682391, "lon": 139.774219, "distanceFromPrev": 0, "cumulativeMeters": 0 },
+    { "id": 1, "name": "品川", "lat": 35.628517, "lon": 139.739, "distanceFromPrev": 8000, "cumulativeMeters": 8000 },
+    { "id": 2, "name": "川崎", "lat": 35.5308, "lon": 139.703, "distanceFromPrev": 8000, "cumulativeMeters": 16000 },
+    { "id": 3, "name": "横浜", "lat": 35.4437, "lon": 139.638, "distanceFromPrev": 14000, "cumulativeMeters": 30000 },
+    { "id": 4, "name": "小田原", "lat": 35.255, "lon": 139.155, "distanceFromPrev": 30000, "cumulativeMeters": 60000 },
+    { "id": 5, "name": "沼津", "lat": 35.095, "lon": 138.864, "distanceFromPrev": 25000, "cumulativeMeters": 85000 },
+    { "id": 6, "name": "静岡", "lat": 34.9756, "lon": 138.3828, "distanceFromPrev": 30000, "cumulativeMeters": 115000 },
+    { "id": 7, "name": "浜松", "lat": 34.7104, "lon": 137.7261, "distanceFromPrev": 55000, "cumulativeMeters": 170000 },
+    { "id": 8, "name": "名古屋", "lat": 35.1815, "lon": 136.9066, "distanceFromPrev": 130000, "cumulativeMeters": 300000 },
+    { "id": 9, "name": "京都", "lat": 35.0116, "lon": 135.7681, "distanceFromPrev": 192000, "cumulativeMeters": 492000 }
+  ],
+  "totalDistanceMeters": 492000
+}

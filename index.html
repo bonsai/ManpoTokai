@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>コースマップ — 山手線 / 東海道</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>コースマップ — 山手線 / 東海道</h1>
+      <p class="subtitle">コースを選んで地図とすごろく風ボードで俯瞰表示。手入力で歩数を反映します。</p>
+    </header>
+
+    <main class="layout">
+      <section class="left-panel card">
+        <div class="controls-row">
+          <label>コース:
+            <select id="courseSelect">
+              <option value="course-0-yamanote-shinjuku-shibuya.json">0 - 山手線（新宿→渋谷回り）</option>
+              <option value="course-1-tokaido-sample.json">1 - 東海道（サンプル）</option>
+            </select>
+          </label>
+
+          <label>手入力歩数（合計）:
+            <input id="stepsInput" type="number" min="0" value="13000" />
+          </label>
+
+          <label>歩幅 (m):
+            <input id="stepLength" type="number" min="0.4" step="0.01" value="0.72" />
+          </label>
+
+          <button id="loadBtn">読み込み</button>
+        </div>
+
+        <div id="map" class="map"></div>
+
+        <div class="info" id="summary">コースを選んで「読み込み」を押してください。</div>
+      </section>
+
+      <section class="right-panel card">
+        <h2>すごろくボード（俯瞰）</h2>
+        <div id="boardWrapper" class="board-wrapper">
+          <svg id="boardSvg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+
+        <div class="legend">
+          <div><span class="dot node"></span> 宿場 / 駅</div>
+          <div><span class="dot player"></span> あなたの位置</div>
+        </div>
+
+        <div class="station-list card small" id="stationList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>デモ用 — JSONファイルを同じディレクトリに置いてください。</small>
+    </footer>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

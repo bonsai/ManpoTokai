@@ -1,0 +1,26 @@
+{
+  "id": "course-0-yamanote-shinjuku-shibuya-old",
+  "name": "山手線（新宿→渋谷回り） - archived",
+  "type": "urban-rail",
+  "description": "アーカイブ：旧データ（旧フォーマット）。短距離サンプル。精度は粗め。",
+  "source": "old-dataset-2023-archive",
+  "version": "v0.1-archived",
+  "date": "2023-08-01",
+  "defaultStepLengthMeters": 0.72,
+  "stations": [
+    {
+      "id": 0,
+      "name": "新宿",
+      "oldName": "新宿（旧称）",
+      "lat": 35.690922,
+      "lon": 139.700257,
+      "distanceFromPrev": 0,
+      "cumulativeMeters": 0,
+      "notes": "起点（アーカイブ）"
+    },
+    {
+      "id": 1,
+      "name": "代々木",
+      "oldName": "代々木村（旧地名）",
+      "lat": 35.683128,
+      "lon": 
